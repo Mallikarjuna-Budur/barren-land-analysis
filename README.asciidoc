@@ -1,0 +1,131 @@
+= Interview Exercise - Barren Land Analysis
+Bill Turner
+:toc:
+:toc-placement!:
+
+toc::[]
+
+== Overview ==
+This is an employment screening exercise used for used by a Fortune 500 employer
+based in the Twin Cites (Minneapolis/St. Paul, MN, USA).
+
+The stated purpose for this exercise is:
+
+[source]
+--
+... not only to gauge your technical ability, but to see how you
+think. We will talk through your results here and your logic as
+part of your on-site interview. The Case Study will not make or
+break your candidacy for the role, but serve as a single data-point
+among your other excellent qualifications.
+--
+
+I was to choose from one of three exercises: *myRetail RESTful*, *Barren Land Analysis*, *Document Search*.
+
+== Exercise Selection Motivation ==
+Being that the exercises were for an interview, the choices presented are likely related to needs within the
+corporation. Exercise _myRetail RESTful service_ is pretty obvious. A lot of data processing is now down through
+ReST. _Document Search_ also seemed relatively obvious. It would be aimed at mining big data. This exercise,
+_Barren Land Analysis_, is less obvious. My guess is that it would be related to optimization, possibly store
+floor space optimization - though I would think that would be a problem that has long been solved.
+
+I tend to gravitate towards problems I find challenging or unique. This is true whether it is a coding problem,
+or something more abstract, such as design or architecture, and even things outside of the IT world. The
+_myRetail RESTful service_ exercise felt too much like _been there, done that_. I have studied information
+retrieval/natural language processing, but am not so well versed that the _Document Search_ wasn't intriguing,
+the _Barren Land Analysis_ ultimately held more appeal.
+
+== Disclaimer ==
+All applications can be solved in a myriad of ways. Not having access to a user nor analyst is not a natural
+condition. Having someone available may have clarified misconceptions - none of which I am aware - leading to
+a different solution and/or technology choices.
+
+The *Meta Requirements* state that a README.md should be included. I chose to use ASCIIDOC instead. I feel it is
+superior to MarkDown for several reasons and it is supported by GitHub. If you are viewing this document
+elsewhere, there is a plug-in for Chrome (an maybe Firefox, I don't know about others). Several editors also
+support Asciidoc. I personally use Atom with the AsciiDoc plug-in. See more about Asciidoc at http://asciidoctor.org/.
+
+I do all my development on a Linux machine (Linux Mint 17). I have not created any Windows batch files. There are no guarantees
+that this will run in any other environment without modifications by the user. If you found you had to modify or
+otherwise enhance this project to make it work in another environment, feel free to share your updates.
+
+== Meta Requirements ==
+These are the requirements that applied to all three of the exercises.
+
+For the case study you choose please meet the following requirements:
+
+. Complete the exercise in the technical stack of your choice.
+.. When appropriate use a data store of your choice.
+.. Use any external frameworks you desire
+.. Be ready to discuss your recommendations to make your solution
+suitable for use in a production environment
+
+. Provide evidence of the result to the interviewers (choose one)
+.. Unit test results or other documented output
+.. Hosted instance of the implementation
+.. Runnable instance of the implementation on your computer
+
+. The end result should be a functional implementation of the problem
+preferably with associated tests
+. Provide the working code either in a publicly accessible hosted repository
+or a zip file containing all necessary build steps and dependencies
+.. Rename .js files to .js.txt if emailing code
+.. Provide a README.md file with instructions for testing, running and
+interacting with your application and any details you feel are relevant to
+share
+
+== Barren Land Analysis Requirements ==
+You have a farm of 400m by 600m where coordinates of the field are from (0, 0) to (399,
+599). A portion of the farm is barren, and all the barren land is in the form of rectangles.
+Due to these rectangles of barren land, the remaining area of fertile land is in no
+particular shape. An area of fertile land is defined as the largest area of land that is not
+covered by any of the rectangles of barren land.
+
+Read input from STDIN. Print output to STDOUT
+
+=== Input ===
+
+You are given a set of rectangles that contain the barren land. These rectangles are
+defined in a string, which consists of four integers separated by single spaces, with no
+additional spaces in the string. The first two integers are the coordinates of the bottom
+left corner in the given rectangle, and the last two integers are the coordinates of the
+top right corner.
+
+=== Output ===
+
+Output all the fertile land area in square meters, sorted from smallest area to greatest,
+separated by a space.
+
+== Goals ==
+
+I believe that what was wanted was something that not only worked, but also demonstrated:
+
+. Design skills
+. Knowledge of Groovy
+. Knowledge of unit testing, in particular with Spock
+. Coding practice
+
+In addition, by developing this, I was able to demonstrate other things.
+
+. what???
+
+==  Technology Stack ==
+Below is a list of technologies used in the development of Forecast.
+
+* Groovy 2.4.7
+* JVM: 1.8.0_101 Vendor: Oracle Corporation
+* Spock 1.0-groovy-2.4
+* Gradle 2.14.1
+
+== Getting Started ==
+Install the following tools if you do not already have them:
+
+ . If you don't have it already, install Java (see the Technology Stack section for
+   versions used).
+ . Install GVM (see http://gvmtool.net/) if it is available for your OS, then use it
+   to install Groovy and Gradle. Alternatively, search the web for installation instructions.
+ . Use git (see https://git-scm.com/) to clone the project.
+ . Navigate into the project root directory, for example <path-to-project-home>/barren-land-analysis.
+ . Run command `gradle build` to build the project.
+ . Run command `gradle test`
+ . Run command `sh ./run.sh`. This will provide instructions for executing the application.

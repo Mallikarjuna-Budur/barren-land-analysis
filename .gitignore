@@ -1,0 +1,60 @@
+# Created by https://www.gitignore.io
+
+### specific files ###
+
+### Java ###
+*.class
+
+### IDE ###
+.classpath
+.project
+.settings/
+bin/
+dist/
+
+## IDEA specific ##
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/libraries
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/mongoSettings.xml
+*.iws
+# IntelliJPlugin-specific files:
+/out/
+
+### gradle ###
+.gradle
+build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+### Linux ###
+*~
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
