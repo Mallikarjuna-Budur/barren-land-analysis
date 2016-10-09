@@ -8,10 +8,13 @@
  */
 
 // Apply the groovy plugin to add support for Groovy
+apply plugin: 'application'
 apply plugin: 'groovy'
 apply plugin: 'idea'
-//apply plugin: 'codenarc'
+apply plugin: 'codenarc'
 apply plugin: 'cobertura'
+
+mainClassName = 'com.changent.barrenlandanalysis.BarrenLandAnalysis'
 
 buildscript {
     repositories {

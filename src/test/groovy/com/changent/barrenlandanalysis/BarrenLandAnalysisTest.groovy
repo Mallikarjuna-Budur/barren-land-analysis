@@ -21,41 +21,153 @@ class BarrenLandAnalysisTest extends Specification {
         barrenLandAnalysis.height == 600
     }
 
-    def "creating with specific width and height"() {
+    def "creating with map constructors"() {
         when:
-        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(100, 200)
+        def sysout = new BufferedWriter(new OutputStreamWriter(new ByteArrayOutputStream()))
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 100, height: 200, sysout: sysout)
 
         then:
         barrenLandAnalysis.width == 100
         barrenLandAnalysis.height == 200
     }
 
-    def "handles no barren land definitions"() {
+    def "handles invalid barren land definitions"() {
         given:
-        def command = ''
-        def sysin = new Scanner(new StringReader(command))
-        def sysout = new ByteArrayOutputStream()
-        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis()
+        def baos = new ByteArrayOutputStream()
+        def sysout = new BufferedWriter(new OutputStreamWriter(baos))
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(sysout: sysout)
 
         when:
-        def result = barrenLandAnalysis.parseCommandLine(sysin, new PrintStream(sysout))
+        def result = barrenLandAnalysis.run(null)
 
         then:
-        result == [[]]
+        result == null
+        baos.toString().contains 'Malformed section definition.'
     }
 
-    def "handles one barren land definitions"() {
+    def "run with no args returns entire space as arable land"() {
         given:
-        def command = '0 292 399 307'
-        def sysin = new Scanner(new StringReader(command))
-        def sysout = new ByteArrayOutputStream()
-        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis()
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 2, height: 3)
+        def noArgs = [] as String[]
 
         when:
-        def result = barrenLandAnalysis.parseCommandLine(sysin, new PrintStream(sysout))
+        def result = barrenLandAnalysis.run(noArgs)
 
         then:
-        result == [['0', '292', '399', '307']]
-        result == [[0, 292, 399, 307]]
+        result == '6'
     }
+
+    def "one square meter of section is barren"() {
+        given:
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 2, height: 3)
+        def args = ['0 0 0 0'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == '5'
+    }
+
+    def "one square meter of section is arable"() {
+        given:
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 2, height: 3)
+        def args = ['0 0 1 1', '1 2 1 2'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == '1'
+    }
+
+    def "entire section is barren"() {
+        given:
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 2, height: 3)
+        def args = ['0 0 1 2'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == ''
+    }
+
+    def "run with definition larger than arable land"() {
+        given:
+        def baos = new ByteArrayOutputStream()
+        def sysout = new BufferedWriter(new OutputStreamWriter(baos))
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 10, height: 12, sysout: sysout)
+        def args = ['0 0 899 999'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == ''
+    }
+
+
+    def "barren section definitions overlap"() {
+        given:
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 2, height: 3)
+        def args = ['0 0 1 0', '0 0 0 2'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == '2'
+    }
+
+    def "barren sections divide land into discreet sections"() {
+        given:
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 3, height: 4)
+        def args = ['0 1 2 1'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == '3 6'
+    }
+
+    def "barren sections surrounding donut hole of arable land"() {
+        given:
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 5, height: 5)
+        def args = ['1 1 1 3', '1 1 3 1', '1 3 3 3', '3 1 3 3'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == '1 16'
+    }
+
+
+    def "first acceptance test returns two equal sections of arable land"() {
+        given:
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis()
+        def args = ['0 292 399 307'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == '116800 116800'
+    }
+
+    def "second acceptance test returns two equal sections of arable land"() {
+        given:
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis()
+        def args = ['48 192 351 207', '48 392 351 407', '120 52 135 547', '260 52 275 547'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == '22816 192608'
+    }
+
+
 }

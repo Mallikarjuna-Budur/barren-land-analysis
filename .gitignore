@@ -9,8 +9,9 @@
 .classpath
 .project
 .settings/
-bin/
 dist/
+build/
+lib/
 
 ## IDEA specific ##
 .idea/workspace.xml

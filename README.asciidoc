@@ -37,8 +37,10 @@ the _Barren Land Analysis_ ultimately held more appeal.
 
 == Disclaimer ==
 All applications can be solved in a myriad of ways. Not having access to a user nor analyst is not a natural
-condition. Having someone available may have clarified misconceptions - none of which I am aware - leading to
-a different solution and/or technology choices.
+condition. Having someone available may have clarified misconceptions leading to a different solution and/or
+technology choices. The following list is where I thought clarification was needed:
+. The output is to be given in square meters. If there is no arable land, does this mean the output should be 0 or ''. I
+chose the latter.
 
 The *Meta Requirements* state that a README.md should be included. I chose to use ASCIIDOC instead. I feel it is
 superior to MarkDown for several reasons and it is supported by GitHub. If you are viewing this document
@@ -128,4 +130,4 @@ Install the following tools if you do not already have them:
  . Navigate into the project root directory, for example <path-to-project-home>/barren-land-analysis.
  . Run command `gradle build` to build the project.
  . Run command `gradle test`
- . Run command `sh ./run.sh`. This will provide instructions for executing the application.
+ . Run command `gradle run <barren land defintions>`
