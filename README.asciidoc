@@ -7,7 +7,8 @@ toc::[]
 
 == Overview ==
 This is an employment screening exercise used for used by a Fortune 500 employer
-based in the Twin Cites (Minneapolis/St. Paul, MN, USA).
+based in the Twin Cites (Minneapolis/St. Paul, MN, USA). I was told to choose from
+one of three exercises: *myRetail RESTful*, *Barren Land Analysis*, *Document Search*.
 
 The stated purpose for this exercise is:
 
@@ -19,8 +20,6 @@ part of your on-site interview. The Case Study will not make or
 break your candidacy for the role, but serve as a single data-point
 among your other excellent qualifications.
 --
-
-I was to choose from one of three exercises: *myRetail RESTful*, *Barren Land Analysis*, *Document Search*.
 
 == Exercise Selection Motivation ==
 Being that the exercises were for an interview, the choices presented are likely related to needs within the
@@ -39,13 +38,15 @@ the _Barren Land Analysis_ ultimately held more appeal.
 All applications can be solved in a myriad of ways. Not having access to a user nor analyst is not a natural
 condition. Having someone available may have clarified misconceptions leading to a different solution and/or
 technology choices. The following list is where I thought clarification was needed:
+
 . The output is to be given in square meters. If there is no arable land, does this mean the output should be 0 or ''. I
 chose the latter.
 
 The *Meta Requirements* state that a README.md should be included. I chose to use ASCIIDOC instead. I feel it is
 superior to MarkDown for several reasons and it is supported by GitHub. If you are viewing this document
 elsewhere, there is a plug-in for Chrome (an maybe Firefox, I don't know about others). Several editors also
-support Asciidoc. I personally use Atom with the AsciiDoc plug-in. See more about Asciidoc at http://asciidoctor.org/.
+support Asciidoc. I personally use Atom and Intellij editors with AsciiDoc plug-ins. See more about Asciidoc
+at http://asciidoctor.org/.
 
 I do all my development on a Linux machine (Linux Mint 17). I have not created any Windows batch files. There are no guarantees
 that this will run in any other environment without modifications by the user. If you found you had to modify or

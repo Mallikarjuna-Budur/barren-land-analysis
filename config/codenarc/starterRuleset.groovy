@@ -3,140 +3,36 @@
 ruleset {
 
     description '''
-    A Sample Groovy RuleSet containing all CodeNarc Rules, grouped by category.
+    A Sample Groovy RuleSet containing all CodeNarc Rules
     You can use this as a template for your own custom RuleSet.
     Just delete the rules that you don't want to include.
     '''
 
-// rulesets/basic.xml
-    AssertWithinFinallyBlock
-    AssignmentInConditional
-    BigDecimalInstantiation
-    BitwiseOperatorInConditional
-    BooleanGetBoolean
-    BrokenNullCheck
-    BrokenOddnessCheck
-    ClassForName
-    ComparisonOfTwoConstants
-    ComparisonWithSelf
-    ConstantAssertExpression
-    ConstantIfExpression
-    ConstantTernaryExpression
-    DeadCode
-    DoubleNegative
-    DuplicateCaseStatement
-    DuplicateMapKey
-    DuplicateSetValue
-    EmptyCatchBlock
-    EmptyClass
-    EmptyElseBlock
-    EmptyFinallyBlock
-    EmptyForStatement
-    EmptyIfStatement
-    EmptyInstanceInitializer
-    EmptyMethod
-    EmptyStaticInitializer
-    EmptySwitchStatement
-    EmptySynchronizedStatement
-    EmptyTryBlock
-    EmptyWhileStatement
-    EqualsAndHashCode
-    EqualsOverloaded
-    ExplicitGarbageCollection
-    ForLoopShouldBeWhileLoop
-    HardCodedWindowsFileSeparator
-    HardCodedWindowsRootDirectory
-    IntegerGetInteger
-    MultipleUnaryOperators
-    RandomDoubleCoercedToZero
-    RemoveAllOnSelf
-    ReturnFromFinallyBlock
-    ThrowExceptionFromFinallyBlock
-
-// rulesets/braces.xml
-    ElseBlockBraces
-    ForStatementBraces
-    IfStatementBraces
-    WhileStatementBraces
-
-// rulesets/concurrency.xml
-    BusyWait
-    DoubleCheckedLocking
-    InconsistentPropertyLocking
-    InconsistentPropertySynchronization
-    NestedSynchronization
-    StaticCalendarField
-    StaticConnection
-    StaticDateFormatField
-    StaticMatcherField
-    StaticSimpleDateFormatField
-    SynchronizedMethod
-    SynchronizedOnBoxedPrimitive
-    SynchronizedOnGetClass
-    SynchronizedOnReentrantLock
-    SynchronizedOnString
-    SynchronizedOnThis
-    SynchronizedReadObjectMethod
-    SystemRunFinalizersOnExit
-    ThisReferenceEscapesConstructor
-    ThreadGroup
-    ThreadLocalNotStaticFinal
-    ThreadYield
-    UseOfNotifyMethod
-    VolatileArrayField
-    VolatileLongOrDoubleField
-    WaitOutsideOfWhileLoop
-
-// rulesets/convention.xml
-    ConfusingTernary
-    CouldBeElvis
-    HashtableIsObsolete
-    IfStatementCouldBeTernary
-    InvertedIfElse
-    LongLiteralWithLowerCaseL
-    NoDef
-    NoTabCharacter
-    ParameterReassignment
-    TernaryCouldBeElvis
-    TrailingComma
-    VectorIsObsolete
-
-// rulesets/design.xml
+    AbcComplexity   // DEPRECATED: Use the AbcMetric rule instead. Requires the GMetrics jar
+    AbcMetric   // Requires the GMetrics jar
+    AbstractClassName
     AbstractClassWithPublicConstructor
     AbstractClassWithoutAbstractMethod
+    AddEmptyString
+    AssertWithinFinallyBlock
+    AssignCollectionSort
+    AssignCollectionUnique
+    AssignmentInConditional
     AssignmentToStaticFieldFromInstanceMethod
+    BigDecimalInstantiation
+    BitwiseOperatorInConditional
+    BlankLineBeforePackage
+    BooleanGetBoolean
     BooleanMethodReturnsNull
+    BracesForClass
+    BracesForForLoop
+    BracesForIfElse
+    BracesForMethod
+    BracesForTryCatchFinally
+    BrokenNullCheck
+    BrokenOddnessCheck
     BuilderMethodWithSideEffects
-    CloneableWithoutClone
-    CloseWithoutCloseable
-    CompareToWithoutComparable
-    ConstantsOnlyInterface
-    EmptyMethodInAbstractClass
-    FinalClassWithProtectedMember
-    ImplementationAsType
-    Instanceof
-    LocaleSetDefault
-    NestedForLoop
-    PrivateFieldCouldBeFinal
-    PublicInstanceField
-    ReturnsNullInsteadOfEmptyArray
-    ReturnsNullInsteadOfEmptyCollection
-    SimpleDateFormatMissingLocale
-    StatelessSingleton
-    ToStringReturnsNull
-
-// rulesets/dry.xml
-    DuplicateListLiteral
-    DuplicateMapLiteral
-    DuplicateNumberLiteral
-    DuplicateStringLiteral
-
-// rulesets/enhanced.xml
-    CloneWithoutCloneable
-    JUnitAssertEqualsConstantActualValue
-    UnsafeImplementationAsMap
-
-// rulesets/exceptions.xml
+    BusyWait
     CatchArrayIndexOutOfBoundsException
     CatchError
     CatchException
@@ -145,79 +41,70 @@ ruleset {
     CatchNullPointerException
     CatchRuntimeException
     CatchThrowable
+    ChainedTest
+    ClassForName
+    ClassJavadoc
+    ClassName
+    ClassNameSameAsFilename
+    ClassNameSameAsSuperclass
+    ClassSize
+    CloneWithoutCloneable
+    CloneableWithoutClone
+    CloseWithoutCloseable
+    ClosureAsLastMethodParameter
+    ClosureStatementOnOpeningLineOfMultipleLineClosure
+    CollectAllIsDeprecated
+    CompareToWithoutComparable
+    ComparisonOfTwoConstants
+    ComparisonWithSelf
     ConfusingClassNamedException
+    ConfusingMethodName
+    ConfusingMultipleReturns
+    ConfusingTernary
+    ConsecutiveBlankLines
+    ConsecutiveLiteralAppends
+    ConsecutiveStringConcatenation
+    ConstantAssertExpression
+    ConstantIfExpression
+    ConstantTernaryExpression
+    ConstantsOnlyInterface
+    CouldBeElvis
+    CoupledTestCase
+    CrapMetric   // Requires the GMetrics jar and a Cobertura coverage file
+    CyclomaticComplexity   // Requires the GMetrics jar
+    DeadCode
+    DirectConnectionManagement
+    DoubleCheckedLocking
+    DoubleNegative
+    DuplicateCaseStatement
+    DuplicateImport
+    DuplicateListLiteral
+    DuplicateMapKey
+    DuplicateMapLiteral
+    DuplicateNumberLiteral
+    DuplicateSetValue
+    DuplicateStringLiteral
+    ElseBlockBraces
+    EmptyCatchBlock
+    EmptyClass
+    EmptyElseBlock
+    EmptyFinallyBlock
+    EmptyForStatement
+    EmptyIfStatement
+    EmptyInstanceInitializer
+    EmptyMethod
+    EmptyMethodInAbstractClass
+    EmptyStaticInitializer
+    EmptySwitchStatement
+    EmptySynchronizedStatement
+    EmptyTryBlock
+    EmptyWhileStatement
+    EnumCustomSerializationIgnored
+    EqualsAndHashCode
+    EqualsOverloaded
     ExceptionExtendsError
     ExceptionExtendsThrowable
     ExceptionNotThrown
-    MissingNewInThrowStatement
-    ReturnNullFromCatchBlock
-    SwallowThreadDeath
-    ThrowError
-    ThrowException
-    ThrowNullPointerException
-    ThrowRuntimeException
-    ThrowThrowable
-
-// rulesets/formatting.xml
-    BlankLineBeforePackage
-    BracesForClass
-    BracesForForLoop
-    BracesForIfElse
-    BracesForMethod
-    BracesForTryCatchFinally
-    ClassJavadoc
-    ClosureStatementOnOpeningLineOfMultipleLineClosure
-    ConsecutiveBlankLines
-    FileEndsWithoutNewline
-    LineLength
-    MissingBlankLineAfterImports
-    MissingBlankLineAfterPackage
-    SpaceAfterCatch
-    SpaceAfterClosingBrace
-    SpaceAfterComma
-    SpaceAfterFor
-    SpaceAfterIf
-    SpaceAfterOpeningBrace
-    SpaceAfterSemicolon
-    SpaceAfterSwitch
-    SpaceAfterWhile
-    SpaceAroundClosureArrow
-    SpaceAroundMapEntryColon
-    SpaceAroundOperator
-    SpaceBeforeClosingBrace
-    SpaceBeforeOpeningBrace
-    TrailingWhitespace
-
-// rulesets/generic.xml
-    IllegalClassMember
-    IllegalClassReference
-    IllegalPackageReference
-    IllegalRegex
-    IllegalString
-    IllegalSubclass
-    RequiredRegex
-    RequiredString
-    StatelessClass
-
-// rulesets/grails.xml
-    GrailsDomainHasEquals
-    GrailsDomainHasToString
-    GrailsDomainReservedSqlKeywordName
-    GrailsDomainWithServiceReference
-    GrailsDuplicateConstraint
-    GrailsDuplicateMapping
-    GrailsMassAssignment
-    GrailsPublicControllerMethod
-    GrailsServletContextReference
-    GrailsSessionReference   // DEPRECATED
-    GrailsStatelessService
-
-// rulesets/groovyism.xml
-    AssignCollectionSort
-    AssignCollectionUnique
-    ClosureAsLastMethodParameter
-    CollectAllIsDeprecated
-    ConfusingMultipleReturns
     ExplicitArrayListInstantiation
     ExplicitCallToAndMethod
     ExplicitCallToCompareToMethod
@@ -233,39 +120,60 @@ ruleset {
     ExplicitCallToPowerMethod
     ExplicitCallToRightShiftMethod
     ExplicitCallToXorMethod
+    ExplicitGarbageCollection
     ExplicitHashMapInstantiation
     ExplicitHashSetInstantiation
     ExplicitLinkedHashMapInstantiation
     ExplicitLinkedListInstantiation
     ExplicitStackInstantiation
     ExplicitTreeSetInstantiation
+    FactoryMethodName
+    FieldName
+    FileCreateTempFile
+    FileEndsWithoutNewline
+    FinalClassWithProtectedMember
+    ForLoopShouldBeWhileLoop
+    ForStatementBraces
     GStringAsMapKey
     GStringExpressionWithinString
     GetterMethodCouldBeProperty
+    GrailsDomainHasEquals
+    GrailsDomainHasToString
+    GrailsDomainReservedSqlKeywordName
+    GrailsDomainWithServiceReference
+    GrailsDuplicateConstraint
+    GrailsDuplicateMapping
+    GrailsMassAssignment
+    GrailsPublicControllerMethod
+    GrailsServletContextReference
+    GrailsSessionReference   // DEPRECATED
+    GrailsStatelessService
     GroovyLangImmutable
-    UseCollectMany
-    UseCollectNested
-
-// rulesets/imports.xml
-    DuplicateImport
+    HardCodedWindowsFileSeparator
+    HardCodedWindowsRootDirectory
+    HashtableIsObsolete
+    IfStatementBraces
+    IfStatementCouldBeTernary
+    IllegalClassMember
+    IllegalClassReference
+    IllegalPackageReference
+    IllegalRegex
+    IllegalString
+    IllegalSubclass
+    ImplementationAsType
     ImportFromSamePackage
     ImportFromSunPackages
-    MisorderedStaticImports
-    NoWildcardImports
-    UnnecessaryGroovyImport
-    UnusedImport
-
-// rulesets/jdbc.xml
-    DirectConnectionManagement
-    JdbcConnectionReference
-    JdbcResultSetReference
-    JdbcStatementReference
-
-// rulesets/junit.xml
-    ChainedTest
-    CoupledTestCase
+    InconsistentPropertyLocking
+    InconsistentPropertySynchronization
+    InsecureRandom
+    Instanceof
+    IntegerGetInteger
+    InterfaceName
+    InterfaceNameSameAsSuperInterface
+    InvertedIfElse
     JUnitAssertAlwaysFails
     JUnitAssertAlwaysSucceeds
+    JUnitAssertEqualsConstantActualValue
     JUnitFailWithoutMessage
     JUnitLostTest
     JUnitPublicField
@@ -278,75 +186,106 @@ ruleset {
     JUnitUnnecessarySetUp
     JUnitUnnecessaryTearDown
     JUnitUnnecessaryThrowsException
-    SpockIgnoreRestUsed
-    UnnecessaryFail
-    UseAssertEqualsInsteadOfAssertTrue
-    UseAssertFalseInsteadOfNegation
-    UseAssertNullInsteadOfAssertEquals
-    UseAssertSameInsteadOfAssertTrue
-    UseAssertTrueInsteadOfAssertEquals
-    UseAssertTrueInsteadOfNegation
-
-// rulesets/logging.xml
+    JavaIoPackageAccess
+    JdbcConnectionReference
+    JdbcResultSetReference
+    JdbcStatementReference
+    LineLength
+    LocaleSetDefault
     LoggerForDifferentClass
     LoggerWithWrongModifiers
     LoggingSwallowsStacktrace
-    MultipleLoggers
-    PrintStackTrace
-    Println
-    SystemErrPrint
-    SystemOutPrint
-
-// rulesets/naming.xml
-    AbstractClassName
-    ClassName
-    ClassNameSameAsFilename
-    ClassNameSameAsSuperclass
-    ConfusingMethodName
-    FactoryMethodName
-    FieldName
-    InterfaceName
-    InterfaceNameSameAsSuperInterface
+    LongLiteralWithLowerCaseL
+    MethodCount
     MethodName
-    ObjectOverrideMisspelledMethodName
-    PackageName
-    PackageNameMatchesFilePath
-    ParameterName
-    PropertyName
-    VariableName
-
-// rulesets/security.xml
-    FileCreateTempFile
-    InsecureRandom
-    JavaIoPackageAccess
+    MethodSize
+    MisorderedStaticImports
+    MissingBlankLineAfterImports
+    MissingBlankLineAfterPackage
+    MissingNewInThrowStatement
+    MultipleLoggers
+    MultipleUnaryOperators
+    NestedBlockDepth
+    NestedForLoop
+    NestedSynchronization
+    NoDef
+    NoTabCharacter
+    NoWildcardImports
     NonFinalPublicField
     NonFinalSubclassOfSensitiveInterface
     ObjectFinalize
+    ObjectOverrideMisspelledMethodName
+    PackageName
+    PackageNameMatchesFilePath
+    ParameterCount
+    ParameterName
+    ParameterReassignment
+    PrintStackTrace
+    Println
+    PrivateFieldCouldBeFinal
+    PropertyName
     PublicFinalizeMethod
-    SystemExit
-    UnsafeArrayDeclaration
-
-// rulesets/serialization.xml
-    EnumCustomSerializationIgnored
+    PublicInstanceField
+    RandomDoubleCoercedToZero
+    RemoveAllOnSelf
+    RequiredRegex
+    RequiredString
+    ReturnFromFinallyBlock
+    ReturnNullFromCatchBlock
+    ReturnsNullInsteadOfEmptyArray
+    ReturnsNullInsteadOfEmptyCollection
     SerialPersistentFields
     SerialVersionUID
     SerializableClassMustDefineSerialVersionUID
-
-// rulesets/size.xml
-    AbcComplexity   // DEPRECATED: Use the AbcMetric rule instead. Requires the GMetrics jar
-    AbcMetric   // Requires the GMetrics jar
-    ClassSize
-    CrapMetric   // Requires the GMetrics jar and a Cobertura coverage file
-    CyclomaticComplexity   // Requires the GMetrics jar
-    MethodCount
-    MethodSize
-    NestedBlockDepth
-    ParameterCount
-
-// rulesets/unnecessary.xml
-    AddEmptyString
-    ConsecutiveLiteralAppends
-    ConsecutiveStringConcatenation
+    SimpleDateFormatMissingLocale
+    SpaceAfterCatch
+    SpaceAfterClosingBrace
+    SpaceAfterComma
+    SpaceAfterFor
+    SpaceAfterIf
+    SpaceAfterOpeningBrace
+    SpaceAfterSemicolon
+    SpaceAfterSwitch
+    SpaceAfterWhile
+    SpaceAroundClosureArrow
+    SpaceAroundMapEntryColon
+    SpaceAroundOperator
+    SpaceBeforeClosingBrace
+    SpaceBeforeOpeningBrace
+    SpockIgnoreRestUsed
+    StatelessClass
+    StatelessSingleton
+    StaticCalendarField
+    StaticConnection
+    StaticDateFormatField
+    StaticMatcherField
+    StaticSimpleDateFormatField
+    SwallowThreadDeath
+    SynchronizedMethod
+    SynchronizedOnBoxedPrimitive
+    SynchronizedOnGetClass
+    SynchronizedOnReentrantLock
+    SynchronizedOnString
+    SynchronizedOnThis
+    SynchronizedReadObjectMethod
+    SystemErrPrint
+    SystemExit
+    SystemOutPrint
+    SystemRunFinalizersOnExit
+    TernaryCouldBeElvis
+    ThisReferenceEscapesConstructor
+    ThreadGroup
+    ThreadLocalNotStaticFinal
+    ThreadYield
+    ThrowError
+    ThrowException
+    ThrowExceptionFromFinallyBlock
+    ThrowNullPointerException
+    ThrowRuntimeException
+    ThrowThrowable
+    ToStringReturnsNull
+    TrailingComma
+    TrailingWhitespace
     UnnecessaryBigDecimalInstantiation
     UnnecessaryBigIntegerInstantiation
     UnnecessaryBooleanExpression
@@ -364,10 +303,12 @@ ruleset {
     UnnecessaryDotClass
     UnnecessaryDoubleInstantiation
     UnnecessaryElseStatement
+    UnnecessaryFail
     UnnecessaryFinalOnPrivateMethod
     UnnecessaryFloatInstantiation
     UnnecessaryGString
     UnnecessaryGetter
+    UnnecessaryGroovyImport
     UnnecessaryIfStatement
     UnnecessaryInstanceOfCheck
     UnnecessaryInstantiationToGetClass
@@ -390,14 +331,30 @@ ruleset {
     UnnecessaryTernaryExpression
     UnnecessaryToString
     UnnecessaryTransientModifier
-
-// rulesets/unused.xml
+    UnsafeArrayDeclaration
+    UnsafeImplementationAsMap
     UnusedArray
+    UnusedImport
     UnusedMethodParameter
     UnusedObject
     UnusedPrivateField
     UnusedPrivateMethod
     UnusedPrivateMethodParameter
     UnusedVariable
+    UseAssertEqualsInsteadOfAssertTrue
+    UseAssertFalseInsteadOfNegation
+    UseAssertNullInsteadOfAssertEquals
+    UseAssertSameInsteadOfAssertTrue
+    UseAssertTrueInsteadOfAssertEquals
+    UseAssertTrueInsteadOfNegation
+    UseCollectMany
+    UseCollectNested
+    UseOfNotifyMethod
+    VariableName
+    VectorIsObsolete
+    VolatileArrayField
+    VolatileLongOrDoubleField
+    WaitOutsideOfWhileLoop
+    WhileStatementBraces
 
 }
