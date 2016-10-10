@@ -40,7 +40,7 @@ condition. Having someone available may have clarified misconceptions leading to
 technology choices. The following list is where I thought clarification was needed:
 
 . The output is to be given in square meters. If there is no arable land, does this mean the output should be 0 or ''. I
-chose the latter.
+chose the former.
 
 The *Meta Requirements* state that a README.md should be included. I chose to use ASCIIDOC instead. I feel it is
 superior to MarkDown for several reasons and it is supported by GitHub. If you are viewing this document

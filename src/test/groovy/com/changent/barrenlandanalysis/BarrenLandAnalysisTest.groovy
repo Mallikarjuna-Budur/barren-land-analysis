@@ -90,7 +90,7 @@ class BarrenLandAnalysisTest extends Specification {
         def result = barrenLandAnalysis.run(args)
 
         then:
-        result == ''
+        result == '0'
     }
 
     def "run with definition larger than arable land"() {
@@ -104,7 +104,7 @@ class BarrenLandAnalysisTest extends Specification {
         def result = barrenLandAnalysis.run(args)
 
         then:
-        result == ''
+        result == '0'
     }
 
 

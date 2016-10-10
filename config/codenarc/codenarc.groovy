@@ -1,5 +1,3 @@
-
-
 ruleset {
 
     description '''
@@ -208,7 +206,7 @@ ruleset {
     NestedBlockDepth
     NestedForLoop
     NestedSynchronization
-    NoDef
+    //NoDef
     NoTabCharacter
     NoWildcardImports
     NonFinalPublicField
@@ -221,7 +219,7 @@ ruleset {
     ParameterName
     ParameterReassignment
     PrintStackTrace
-    Println
+//    Println
     PrivateFieldCouldBeFinal
     PropertyName
     PublicFinalizeMethod

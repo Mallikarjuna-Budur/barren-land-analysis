@@ -12,9 +12,21 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="barren-land-analysis_main" />
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.4.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.codenarc:CodeNarc:0.25.2" level="project" />
     <orderEntry type="library" name="Gradle: org.spockframework:spock-core:1.0-groovy-2.4" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.gmetrics:GMetrics:0.7" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy:2.4.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-xml:2.4.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-ant:2.4.7" level="project" />
+    <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.ant:ant:1.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-groovydoc:2.4.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-templates:2.4.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.ant:ant-antlr:1.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.ant:ant-launcher:1.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.ant:ant-junit:1.9.4" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="barren-land-analysis_main" />
 </module>

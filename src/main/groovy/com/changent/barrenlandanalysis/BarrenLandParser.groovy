@@ -5,10 +5,12 @@ package com.changent.barrenlandanalysis
  */
 class BarrenLandParser {
 
-    public static List parseCommandLine(String... args) {
+    public final static int LOWER_LEFT_ROW_IDX = 0
+    public final static int LOWER_LEFT_COL_IDX = 1
+    public final static int UPPER_RIGHT_ROW_IDX = 2
+    public final static int UPPER_RIGHT_COL_IDX = 3
 
-//        println "BarrenLandParser.parseCommandLine(${args})"
-
+    static List parseCommandLine(String... args) {
         if (args == null) {
             return null
         }
@@ -24,16 +26,16 @@ class BarrenLandParser {
             }
 
             transformed.size() == 4 &&
-                transformed[0] >= 0 &&
-                transformed[1] >= 0 &&
-                transformed[2] >= 0 &&
-                transformed[3] >= 0 &&
-                transformed[0] <= transformed[2] &&
-                transformed[1] <= transformed[3] ?
+                transformed[LOWER_LEFT_ROW_IDX] >= 0 &&
+                transformed[LOWER_LEFT_COL_IDX] >= 0 &&
+                transformed[UPPER_RIGHT_ROW_IDX] >= 0 &&
+                transformed[UPPER_RIGHT_COL_IDX] >= 0 &&
+                transformed[LOWER_LEFT_ROW_IDX] <= transformed[UPPER_RIGHT_ROW_IDX] &&
+                transformed[LOWER_LEFT_COL_IDX] <= transformed[UPPER_RIGHT_COL_IDX] ?
                 transformed : null
         }
 
-        return barrenSections ? barrenSections : null
+        barrenSections ?: null
     }
 
 }
