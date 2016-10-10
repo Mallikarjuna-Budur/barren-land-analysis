@@ -25,8 +25,8 @@ among your other excellent qualifications.
 Being that the exercises were for an interview, the choices presented are likely related to needs within the
 corporation. Exercise _myRetail RESTful service_ is pretty obvious. A lot of data processing is now down through
 ReST. _Document Search_ also seemed relatively obvious. It would be aimed at mining big data. This exercise,
-_Barren Land Analysis_, is less obvious. My guess is that it would be related to optimization, possibly store
-floor space optimization - though I would think that would be a problem that has long been solved.
+_Barren Land Analysis_, is less obvious. While I can see how it would be used in graphics - a flood fill for
+example - it is less clear how a retailing giant would use this and similar algorithms.
 
 I tend to gravitate towards problems I find challenging or unique. This is true whether it is a coding problem,
 or something more abstract, such as design or architecture, and even things outside of the IT world. The
