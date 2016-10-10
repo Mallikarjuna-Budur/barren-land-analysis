@@ -5,12 +5,16 @@
 ### Java ###
 *.class
 
+# Package Files #
+*.jar
+*.war
+*.ear
+
 ### IDE ###
 .classpath
 .project
 .settings/
 dist/
-build/
 lib/
 
 ## IDEA specific ##
@@ -31,7 +35,10 @@ lib/
 
 ### gradle ###
 .gradle
-build/
+build/*
+### !build/install/barren-land-analysis/bin/*
+### !build/install/barren-land-analysis/lib/*
+
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -41,11 +48,6 @@ gradle-app.setting
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
@@ -59,3 +61,5 @@ hs_err_pid*
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
+build/
+gradle/wrapper/gradle-wrapper.jar

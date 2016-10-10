@@ -41,6 +41,8 @@ technology choices. The following list is where I thought clarification was need
 
 . The output is to be given in square meters. If there is no arable land, does this mean the output should be 0 or ''. I
 chose the former.
+. I made the assumption that reading from STDIN merely meant that barren region definitions would be passed in as
+command arguments rather than writing an interactive console application.
 
 The *Meta Requirements* state that a README.md should be included. I chose to use ASCIIDOC instead. I feel it is
 superior to MarkDown for several reasons and it is supported by GitHub. If you are viewing this document
@@ -108,10 +110,6 @@ I believe that what was wanted was something that not only worked, but also demo
 . Knowledge of unit testing, in particular with Spock
 . Coding practice
 
-In addition, by developing this, I was able to demonstrate other things.
-
-. what???
-
 ==  Technology Stack ==
 Below is a list of technologies used in the development of Forecast.
 
@@ -128,7 +126,12 @@ Install the following tools if you do not already have them:
  . Install GVM (see http://gvmtool.net/) if it is available for your OS, then use it
    to install Groovy and Gradle. Alternatively, search the web for installation instructions.
  . Use git (see https://git-scm.com/) to clone the project.
- . Navigate into the project root directory, for example <path-to-project-home>/barren-land-analysis.
+ . Navigate into the project root directory, for example `<workspace>/barren-land-analysis`.
  . Run command `gradle build` to build the project.
- . Run command `gradle test`
- . Run command `gradle run <barren land defintions>`
+ . Run command `gradle test` to validate the project if desired
+
+To run the application:
+
+ . Run command `gradle installDist` to install the application
+ . Change to directory `<workspace>/barren-land-analysis/build/install/barren-land-analysis/bin`
+ . Run `./barren-land-analysis` followed by 0 or barren region definitions
