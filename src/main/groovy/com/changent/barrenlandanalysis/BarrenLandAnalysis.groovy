@@ -51,9 +51,9 @@ class BarrenLandAnalysis {
         for (barrenSection in barrenSections) {
             def minX = barrenSection[BarrenLandParser.LOWER_LEFT_ROW_IDX]
             def minY = barrenSection[BarrenLandParser.LOWER_LEFT_COL_IDX]
-            def maxX = barrenSection[BarrenLandParser.UPPER_RIGHT_ROW_IDX] <= width ?
+            def maxX = barrenSection[BarrenLandParser.UPPER_RIGHT_ROW_IDX] < width ?
                     barrenSection[BarrenLandParser.UPPER_RIGHT_ROW_IDX] + 1 : width
-            def maxY = barrenSection[BarrenLandParser.UPPER_RIGHT_COL_IDX] <= height ?
+            def maxY = barrenSection[BarrenLandParser.UPPER_RIGHT_COL_IDX] < height ?
                     barrenSection[BarrenLandParser.UPPER_RIGHT_COL_IDX] + 1 : height
             for (int x = minX; x < maxX; x++) {
                 for (int y = minY; y < maxY; y++) {

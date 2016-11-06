@@ -93,12 +93,27 @@ class BarrenLandAnalysisTest extends Specification {
         result == '0'
     }
 
-    def "run with definition larger than arable land"() {
+    def "run with definition larger than arable land (bound test)"() {
         given:
         def baos = new ByteArrayOutputStream()
         def sysout = new BufferedWriter(new OutputStreamWriter(baos))
         BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 10, height: 12, sysout: sysout)
         def args = ['0 0 899 999'] as String[]
+
+        when:
+        def result = barrenLandAnalysis.run(args)
+
+        then:
+        result == '0'
+    }
+
+
+    def "run with definitions equal to land definition"() {
+        given:
+        def baos = new ByteArrayOutputStream()
+        def sysout = new BufferedWriter(new OutputStreamWriter(baos))
+        BarrenLandAnalysis barrenLandAnalysis = new BarrenLandAnalysis(width: 10, height: 12, sysout: sysout)
+        def args = ['0 0 10 12'] as String[]
 
         when:
         def result = barrenLandAnalysis.run(args)

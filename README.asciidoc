@@ -1,4 +1,4 @@
-= Interview Exercise - Barren Land Analysis
+= Barren Land Analysis - A Breadth First Search Of Disconnected Graphs
 Bill Turner
 :toc:
 :toc-placement!:
@@ -6,7 +6,7 @@ Bill Turner
 toc::[]
 
 == Overview ==
-This is an employment screening exercise used for used by a Fortune 500 employer
+A friend was an employment screening exercise used for used by a Fortune 500 employer
 based in the Twin Cites (Minneapolis/St. Paul, MN, USA). I was told to choose from
 one of three exercises: *myRetail RESTful*, *Barren Land Analysis*, *Document Search*.
 
@@ -21,9 +21,11 @@ break your candidacy for the role, but serve as a single data-point
 among your other excellent qualifications.
 --
 
+He shared it with me knowing I like challenges.
+
 == Exercise Selection Motivation ==
 Being that the exercises were for an interview, the choices presented are likely related to needs within the
-corporation. Exercise _myRetail RESTful service_ is pretty obvious. A lot of data processing is now down through
+corporation. Exercise _myRetail RESTful service_ is pretty obvious. A lot of data processing is now done through
 ReST. _Document Search_ also seemed relatively obvious. It would be aimed at mining big data. This exercise,
 _Barren Land Analysis_, is less obvious. While I can see how it would be used in graphics - a flood fill for
 example - it is less clear how a retailing giant would use this and similar algorithms.
@@ -31,7 +33,7 @@ example - it is less clear how a retailing giant would use this and similar algo
 I tend to gravitate towards problems I find challenging or unique. This is true whether it is a coding problem,
 or something more abstract, such as design or architecture, and even things outside of the IT world. The
 _myRetail RESTful service_ exercise felt too much like _been there, done that_. I have studied information
-retrieval/natural language processing, but am not so well versed that the _Document Search_ wasn't intriguing,
+retrieval/natural language processing, but am not so well versed that the _Document Search_ wasn't challgenging,
 the _Barren Land Analysis_ ultimately held more appeal.
 
 == Disclaimer ==
@@ -46,7 +48,7 @@ command arguments rather than writing an interactive console application.
 
 The *Meta Requirements* state that a README.md should be included. I chose to use ASCIIDOC instead. I feel it is
 superior to MarkDown for several reasons and it is supported by GitHub. If you are viewing this document
-elsewhere, there is a plug-in for Chrome (an maybe Firefox, I don't know about others). Several editors also
+elsewhere, there is a plug-in for Chrome (and maybe Firefox, I don't know about others). Several editors also
 support Asciidoc. I personally use Atom and Intellij editors with AsciiDoc plug-ins. See more about Asciidoc
 at http://asciidoctor.org/.
 
@@ -103,7 +105,7 @@ separated by a space.
 
 == Goals ==
 
-I believe that what was wanted was something that not only worked, but also demonstrated:
+I wanted something that not only worked, but also demonstrated:
 
 . Design skills
 . Knowledge of Groovy
